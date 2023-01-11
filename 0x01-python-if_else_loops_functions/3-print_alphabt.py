@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-for i in range(97,123):
-    if chr(i) not in 'qe':
-        print("%c" % i, end="")
+for letter in range(97,123):
+    if chr(letter) == 'e' or chr(letter) == 'q':
+        continue
+    print("%c" % letter, end="")
