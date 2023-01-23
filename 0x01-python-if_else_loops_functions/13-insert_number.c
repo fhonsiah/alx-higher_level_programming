@@ -1,34 +1,40 @@
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
 /**
- *struct listint_s - singly linked list
- *@n: integer
- *@next: points to the next node
+ *insert_mode - inersts a number in an ordered linked list
+ *@head: double pointer to the linked list
+ *@number: number to insert in the new node
  *
- *Description: sinlgy linked list node structure
  *
+ *Return: address of the new node, or NULL
  */
-listint_t *insert_node(listint_t **head, int number)
+listint_t *insert_node(lisint_t **head, int number)
 {
-	listint_t *new_node;
-	listint_t *current;
+	listint_t *new, *tmp, *prev;
 
-	new_node = malloc(sizeof(listint_t));
-	if (new_node == NULL)
-		return NULL;
-	new_node-> = number;
-
-	if (*head == NULL || (*head)->n >= number)
+	tmp = *head;
+	new = malloc(sizeof(listint_t));
+	if (!new)
+		return (NULL);
+	new-> = number;
+	if (!*head || (*head)->n > number)
 	{
-		new_node->next = *head;
-		*head = new_node;
-		return new_node;
+		new->next = *head;
+		*head = new;
+		return (*head);
 	}
-
-	current = *head;
-	while (current->next != NULL && current->next->n < number)
-		current = current->next;
-	new_node->next = current->next;
-	current->next = new_node;
-
-	return new_node;
+	while (tmp)
+	{
+		if (tmp->n > number)
+		{
+			break;
+		}
+		prev = tmp;
+		tmp = tmp->next;
+	}
+	new->next = tmp;
+	prev->next = new;
+	return (*head);
 }
