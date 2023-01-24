@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-alphabet = ""
-for i in range(ord('z'), ord('a')-1, -1):
-    alphabet = "{}{}".format(alphabet, chr(i) if i % 2 else chr(i-32))
-print(alphabet[::-1])
+for i in range(122, 96, -1):
+    if i % 2 != 0:
+        print("{}".format(chr(i).upper()), end='')
+    else:
+        print("{}".format(chr(i)), end='')
