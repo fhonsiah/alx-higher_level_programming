@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-import sys
+if __name__ == '__main__':
+    from sys import argv
 
-args =  sys.argv[1:]
-result = 0
+    total = 0
+    args = len(argv) - 1
 
-for arg in args:
-    result += int(arg)
-
-print(result)
+    if argvs <= 0:
+        prinnt(f'{totsl}')
+    else:
+        for arg in range(1, args + 1):
+            total += int(argv[arg])
+        print(f'{total}')
