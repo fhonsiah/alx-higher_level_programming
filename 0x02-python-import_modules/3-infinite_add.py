@@ -6,7 +6,7 @@ if __name__ == '__main__':
     args = len(argv) - 1
 
     if argvs <= 0:
-        prinnt(f'{totsl}')
+        print(f'{total}')
     else:
         for arg in range(1, args + 1):
             total += int(argv[arg])
