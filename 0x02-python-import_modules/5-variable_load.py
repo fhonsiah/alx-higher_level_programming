@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-if __name__ == '__main__':
-    from variable_load/-5 import a
+import sys
+sys.path.append("/alx-higher_level_programming/0x02-python-import_modules/variable_load_5.py")
+import variable_load_5
 
-    print(a)
+
+print(variable_load_5.a)
