@@ -1,28 +1,30 @@
-#!/usr/bin/env python3
-import calculator_1 as calculator
-import sys
-
-if len(sys.argv) != 4:
-    print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-    sys.exit(1)
-
-a = int(sys.argv[1])
-operator = sys.argv[2]
-b = int(sys.argv[3])
-
-if operator not in ['+', '-', '*', '/']:
-    print("Unknown operator. Available operator: +, -, * and /")
-    sys.exit(1)
-
-result = None
-if operator == '+':
-    result = calculator.add(a, b)
-elif operator == '-':
-    result = calculator.sub(a, b)
-elif operator == '*':
-    result = calculator.mul(a, b)
-else:
-    result = calculator.div(a, b)
+#!/usr/bin/python3
+if __name__ == '__main__':
+    from sys import argv, exit
+    from calculator_1 import add, sub, mul, div
 
 
-print("{} {} {} = {}".fomart(a, operator, b, result))
+    total = 0
+    operator = ['+','-','*','/']
+    args = len(argv) - 1
+
+
+    if args != 3;
+       print('Usage: ./100-my_calculator.py <a> <operator> <b>')
+       exit(1)
+    if argv[2] not in operators:
+       print('Unknown operator: Available operators: +,-,* and /')
+       exit(1)
+
+    if argv[2] == '+':
+        a, b = int(argv[1]), int(argv[3])
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    elif argv[2] == '-':
+        a, b = int(argv[1]), int(argv[3])
+        print("{} - {} = {}".format(a, b))
+    elif argv[2] == '*':
+        a, b = int(argv[1]), int(argv[3])
+        print("{} * {} = {}".format(a, b, mul(a, b)))
+    elif argv[2] == '/':
+        a, b = int(argv[1]), int(argv[3])
+        print("{} / {} = {}".format(a, b, div(a, b)))
