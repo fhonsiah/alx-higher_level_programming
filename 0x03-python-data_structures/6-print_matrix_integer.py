@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-print_matrix_integer = __import__('6-matrix_integer').print matrix_ integer
+print_matrix_integer = __import__('6-matrix_integer').print_matrix_integer
 
 matrix = [
 
