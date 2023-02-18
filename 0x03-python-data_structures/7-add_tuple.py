@@ -8,5 +8,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
     # Take the first 2 elements of each tuple and add them
     result = (tuple_a[0]+ tuple_b[0], tuple_a[1] + tuple_b[1])
-
     return result
