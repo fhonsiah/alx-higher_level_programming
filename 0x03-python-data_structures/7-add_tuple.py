@@ -1,22 +1,12 @@
 #!/usr/bin/python3
-def add_tuple(tuple_a=(), tuple_b()):
-    """
+def add_tuple(tuple_a=(), tuple_b=()):
+    # if a tuple has fewer than 2 elements, add 0s to it
+    if len(tuple_a) < 2:
+        tuple_a += (0,) * (2 - len(tuple_a))
+    if len(tuple_b) < 2:
+        tuple_b += (0,) * (2 - len(tuple_b))
 
-    The function that adds 2 tuples.
+    # Take the first 2 elements of each tuple and add them
+    result = (tuple_a[0]+ tuple_b[0], tuple_a[1] + tuple_b[1])
 
-    Args:
-        tuple_a: The first tuple 
-        tuple_b: The seconf tuple
-    """
-    # Dealing with tuple_a
-    if not len(tuple_a):
-        tuple_a = 0, 0
-    elif len(tuple_a) == 1:
-        tuple_a = tuple_a[0], 0
-    # Dealing with tuple_b
-    if not len(tuple_b):
-        tuple_b = 0, 0
-    elif len(tuple_b) == 1:
-        tuple_b = tuple_b[0], 0
-
-    return (tuple_a[0] + tuple_b[0], tuple_a[1] + tuple_b[1])
+    return result
