@@ -3,8 +3,5 @@ a = 89
 b = 10
 
 # swap the values of a and b using a temporary variable
-temp = a
-a = b
-b = temp
-
+a, b =  b, a
 print("a={:d} - b={:d}".format(a, b))
