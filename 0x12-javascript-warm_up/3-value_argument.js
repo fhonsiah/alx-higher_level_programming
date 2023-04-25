@@ -1,8 +1,10 @@
 #!/usr/bin/node
-const [, arg] = process.argv;
+const [, , arg1, arg2] = process.argv;
 
-if (arg) {
- console.log(arg);
-} else {
+if (!arg1) {
  console.log('No argument');
+} else if (!arg2) {
+ console.log(arg1);
+} else {
+ console.log(arg1);
 }
